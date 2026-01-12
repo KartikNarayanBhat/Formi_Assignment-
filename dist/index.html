@@ -1,10 +1,56 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Markdown Parser</title>
-  <body>
-    <div id="container"></div>
-      <script src="./MarkdownParser.js"></script>
-      <div id="markdownContainer"></div>
-      <button id="button" onclick="runStream()">STREAM</button>
-  </body>
+<head>
+    <title>Streaming Markdown Parser</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px;
+        }
+        .code-block { 
+            background: #f8f9fa !important; 
+            padding: 12px !important; 
+            border-left: 4px solid #2196f3 !important;
+            font-family: 'Courier New', monospace !important;
+            margin: 8px 0 !important;
+            white-space: pre-wrap !important;
+            border-radius: 4px !important;
+        }
+        .inline-code { 
+            background: #e3f2fd !important; 
+            padding: 2px 6px !important; 
+            border-radius: 4px !important;
+            font-family: 'Courier New', monospace !important;
+            color: #1976d2 !important;
+        }
+        #markdownContainer {
+            border: 1px solid #eee;
+            min-height: 400px;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fafafa;
+        }
+        button {
+            background: #007cba;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover { background: #005a87; }
+    </style>
+</head>
+<body>
+    <h1>Streaming Markdown Parser</h1>
+    <p>Click below to see live parsing of inline code <code>`like this`</code> and code blocks:</p>
+    
+    <div id="markdownContainer"></div>
+    <button id="button" onclick="runStream()">Run Stream</button>
+
+    <script src="./MarkdownParser.js"></script>
+</body>
 </html>
